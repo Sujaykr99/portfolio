@@ -19,6 +19,30 @@ body {
   overflow-x: hidden;
 }
 
+/* Required host styles from the registered ThreeUI shared stylesheet. */
+.sketchbook,
+.sketchbook__frame {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sketchbook {
+  position: relative;
+  overflow: hidden;
+  background: #ece7dc;
+}
+
+.sketchbook__frame {
+  border: 0;
+  opacity: 0;
+  background: #ece7dc;
+}
+
+.sketchbook__frame.is-ready {
+  opacity: 1;
+}
+
 /* Glassmorphism card */
 .glass-card {
   background: rgba(255, 255, 255, 0.03);
@@ -88,4 +112,149 @@ body {
   z-index: 9999;
   opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Hero notebook */
+.sketch-hero {
+  position: relative;
+  display: grid;
+  min-height: min(760px, 100vh);
+  place-items: center;
+  overflow: hidden;
+  padding: 7rem 1.5rem 4rem;
+  background: #080808;
+  perspective: 1300px;
+}
+
+.sketch-hero__wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 234, 0, 0.1), transparent 33%),
+    radial-gradient(circle at 15% 20%, rgba(255, 0, 0, 0.09), transparent 28%);
+}
+
+.sketch-hero__note {
+  position: absolute;
+  top: 7rem;
+  left: clamp(1.5rem, 7vw, 6rem);
+  color: rgba(255, 255, 255, 0.43);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.sketch-hero__book {
+  position: relative;
+  width: min(700px, calc(100vw - 3rem));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.sketch-hero__pages {
+  position: absolute;
+  inset: 12px -12px -12px 12px;
+  border-radius: 4px 16px 16px 4px;
+  background: #b9b0a1;
+  box-shadow: 8px 12px 0 #8d8579, 18px 22px 42px rgba(0, 0, 0, 0.6);
+  transform: translateZ(-12px);
+}
+
+.sketch-hero__paper {
+  position: relative;
+  min-height: 425px;
+  overflow: hidden;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  color: #191714;
+  border-radius: 3px 15px 15px 3px;
+  background-color: #ece7dc;
+  background-image: linear-gradient(rgba(69, 61, 50, 0.09) 1px, transparent 1px);
+  background-size: 100% 2rem;
+  box-shadow: inset 0 0 0 1px rgba(75, 62, 44, 0.2), 0 20px 55px rgba(0, 0, 0, 0.42);
+}
+
+.sketch-hero__paper::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: clamp(2.35rem, 7vw, 5rem);
+  width: 1px;
+  content: '';
+  background: rgba(190, 51, 45, 0.33);
+}
+
+.sketch-hero__paper-head,
+.sketch-hero__footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sketch-hero__paper-head { color: #605a51; }
+.sketch-hero__rule { position: relative; z-index: 1; height: 1px; margin: 1.35rem 0 2.2rem; background: rgba(25, 23, 20, 0.2); }
+
+.sketch-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding-left: clamp(0.9rem, 3vw, 2.2rem);
+}
+
+.sketch-hero__content h1 {
+  display: grid;
+  gap: 0.1em;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.4rem, 7vw, 5.3rem);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: -0.07em;
+}
+
+.sketch-hero__content h1 span { display: block; }
+.sketch-hero__content p { margin-top: 1.7rem; font-size: clamp(0.9rem, 1.7vw, 1.05rem); line-height: 1.65; color: #514a40; }
+
+.sketch-hero__footer {
+  position: absolute;
+  right: clamp(1.5rem, 5vw, 3.5rem);
+  bottom: clamp(1.5rem, 5vw, 3rem);
+  left: clamp(1.5rem, 5vw, 3.5rem);
+  padding-top: 1rem;
+  border-top: 1px solid rgba(25, 23, 20, 0.2);
+}
+
+.sketch-hero__footer a,
+.sketch-hero__footer button {
+  color: #191714;
+  font: inherit;
+  text-decoration: none;
+}
+
+.sketch-hero__footer button { padding: 0; border: 0; background: transparent; cursor: pointer; }
+.sketch-hero__footer a:hover, .sketch-hero__footer button:hover { color: #a22622; }
+
+.sketch-hero__caption {
+  position: absolute;
+  bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .sketch-hero { min-height: 680px; padding-top: 6rem; }
+  .sketch-hero__note { top: 5.7rem; }
+  .sketch-hero__paper { min-height: 460px; }
+  .sketch-hero__paper-head { font-size: 0.55rem; letter-spacing: 0.08em; }
+  .sketch-hero__footer { font-size: 0.56rem; letter-spacing: 0.08em; }
+  .sketch-hero__caption { right: 1.5rem; bottom: 0.7rem; left: 1.5rem; font-size: 0.55rem; }
 }

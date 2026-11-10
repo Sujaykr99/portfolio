@@ -6,6 +6,7 @@ const skills = [
   { name: 'React', level: 85 },
   { name: 'JavaScript', level: 82 },
   { name: 'Node.js', level: 72 },
+  { name: 'MongoDB', level: 75 },
   { name: 'C++', level: 78 },
   { name: 'HTML/CSS', level: 92 },
   { name: 'Git', level: 75 },
@@ -82,16 +83,16 @@ export default function BentoGrid() {
                 className="font-black text-white leading-none"
                 style={{ fontSize: 'clamp(3.5rem, 7vw, 5rem)' }}
               >
-                100+
+                250+
               </p>
               <p className="text-white font-bold text-sm tracking-wider uppercase mt-2">
-                Complex Problems Solved
+                LeetCode Problems Solved
               </p>
             </div>
           </div>
           <p className="text-[#aaaaaa] text-xs leading-relaxed mt-6">
-            LeetCode - Data Structures &amp; Algorithms. Strengthening
-            problem-solving efficiency and competitive coding skills.
+            Data structures and algorithms across arrays, trees, graphs, and
+            dynamic programming.
           </p>
         </motion.div>
 
@@ -117,13 +118,13 @@ export default function BentoGrid() {
           </div>
 
           <div className="space-y-2.5 mt-2">
-            {skills.slice(0, 3).map((s, i) => (
+            {skills.slice(0, 4).map((s, i) => (
               <SkillBar key={s.name} skill={s} delay={i} />
             ))}
           </div>
 
           <div className="flex flex-wrap gap-2 mt-5">
-            {['React', 'Node.js', 'Express.js', 'MongoDB', 'HTML', 'CSS', 'JavaScript'].map((t) => (
+            {['React', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB', 'SQL', 'JWT', 'Vercel'].map((t) => (
               <span key={t} className="tag-pill">{t}</span>
             ))}
           </div>
@@ -151,7 +152,7 @@ export default function BentoGrid() {
           </div>
 
           <div className="space-y-2.5 mt-2">
-            {skills.slice(3).map((s, i) => (
+            {skills.slice(4).map((s, i) => (
               <SkillBar key={s.name} skill={s} delay={i} />
             ))}
           </div>

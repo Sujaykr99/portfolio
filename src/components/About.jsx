@@ -3,7 +3,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const certs = [
-  { title: 'AI for All', org: 'Ministry of Education & Intel' },
+  { title: 'AWS Academy Graduate - Cloud Architecting', org: 'AWS Academy' },
   { title: 'Responsive Web Design', org: 'freeCodeCamp' },
 ]
 
@@ -33,14 +33,14 @@ export default function About() {
             SUJAY KUMAR SINGH
           </h3>
           <p className="text-[#aaaaaa] text-sm leading-relaxed mb-6">
-            B.Tech in Computer Science &amp; Engineering (AIML) student at ABES
-            Engineering College, Ghaziabad - graduating 2027. Currently deepening
-            expertise in the MERN stack while leading creative events on campus.
+            Full-stack web developer and B.Tech Computer Science &amp; Engineering
+            (AIML) student at ABES Engineering College, Ghaziabad. I build
+            production-ready applications from responsive UI through APIs and deployment.
           </p>
           <div className="space-y-2">
             <div className="flex items-center gap-3 text-sm">
               <span className="text-[#aaaaaa]">CGPA</span>
-              <span className="ml-auto text-white font-semibold">7.71</span>
+              <span className="ml-auto text-white font-semibold">7.74</span>
             </div>
             <div className="h-px bg-white/5" />
             <div className="flex items-center gap-3 text-sm">
@@ -51,6 +51,13 @@ export default function About() {
             <div className="flex items-center gap-3 text-sm">
               <span className="text-[#aaaaaa]">Expected Graduation</span>
               <span className="ml-auto text-white font-semibold">2027</span>
+            </div>
+          </div>
+          <div className="mt-6 border-t border-white/5 pt-5">
+            <h4 className="mb-3 text-xs font-bold uppercase tracking-widest text-white/70">Education</h4>
+            <div className="space-y-3 text-xs">
+              <p className="text-[#aaaaaa]"><span className="font-medium text-white">B.Tech CSE (AIML), ABES Engineering College</span><br />2023–2027 · CGPA 7.74</p>
+              <p className="text-[#aaaaaa]"><span className="font-medium text-white">Kendriya Vidyalaya, Patna · CBSE</span><br />Class 12: 82.00% · 2022 &nbsp;|&nbsp; Class 10: 85.00% · 2020</p>
             </div>
           </div>
         </div>
@@ -85,12 +92,17 @@ export default function About() {
               Event &amp; Decor Head
             </p>
             <p className="text-[#aaaaaa] text-xs mb-2">
-              Creative U and Tourism Club - Aug 2025 to Jul 2026
+              Creative U and Tourism Club - Aug 2025 to Aug 2026
             </p>
             <p className="text-[#aaaaaa] text-xs leading-relaxed">
-              Led planning and execution of creative campus events, overseeing
-              content writing, promotion, and team coordination.
+              Led three campus-wide creative events, coordinating 20 members across
+              content, logistics, and promotion for 300+ attendees.
             </p>
+            <div className="mt-5 border-t border-white/5 pt-4">
+              <p className="text-white text-sm font-medium">Volunteer</p>
+              <p className="text-[#aaaaaa] text-xs">Minerva Club, Literary Society - Aug 2024 to Aug 2025</p>
+              <p className="mt-2 text-[#aaaaaa] text-xs leading-relaxed">Contributed to content writing and debating activities, supporting literary initiatives.</p>
+            </div>
           </div>
         </div>
       </motion.div>
